@@ -37,3 +37,8 @@ tasks.named('bootJar') {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+gradle.projectsEvaluated {
+	tasks.withType(JavaCompile) {
+		options.fork = true
+	}
+}
